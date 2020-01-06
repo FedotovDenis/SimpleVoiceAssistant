@@ -17,7 +17,7 @@ def command():               # Функция которая будет слуш
     with sr.Microphone() as source:                # Открываем прослушивание с помощью оператора
         print("Говорите")                # Говорим пользовотелю что бы говорили
         r.pause_threshold = 1            # после вопроса с помощью этого метода ждем 1 секунду
-        r.adjust_for_ambient_noise(source, duration=1) # библиотека для того что бы не мешали фоновые звуки
+        r.adjust_for_ambient_noise(source, duration=1)  # библиотека для того что бы не мешали фоновые звуки
         audio = r.listen(source)
 
         try:               # Выполняем команды с услышах слов пользователя
@@ -35,7 +35,7 @@ def makeSomething(zadanie):          # Эта функция выполняет 
         url = 'https://sefon.pro/genres/trance/'
         webbrowser.open(url)
 
-    elif 'твое имя' in zadanie:          # узнаем имя
+    elif 'имя' in zadanie:          # узнаем имя
         talk("Меня зовут Сири")
 
     elif 'стоп' in zadanie:  # останавливает нашу программу
